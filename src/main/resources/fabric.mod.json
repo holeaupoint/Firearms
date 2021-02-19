@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "firearms",
+  "version": "${version}",
+  "name": "Firearms",
+  "description": "pew pew for block game",
+  "authors": [
+    "radiolite"
+  ],
+  "contact": {
+    "website": "https://github.com/holeaupoint"
+  },
+  "license": "MIT",
+  "icon": "assets/firearms/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.github.holeaupoint.firearms.client.FirearmsClient"
+    ],
+    "main": [
+      "com.github.holeaupoint.firearms.Firearms"
+    ]
+  },
+  "mixins": [
+    "firearms.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
