@@ -1,4 +1,4 @@
-package com.github.holeaupoint.firearms.com.github.holeaupoint.firearms.items
+package com.github.holeaupoint.firearms.com.github.holeaupoint.firearms.items.ingredients
 
 import net.minecraft.client.item.TooltipContext
 import net.minecraft.item.Item
@@ -13,6 +13,7 @@ import net.minecraft.world.World
 
 class BlackPowder(settings: Settings?) : Item(settings) {
 
+    // Placeholder event
     override fun use(world: World?, playerEntity: PlayerEntity, hand: Hand?): TypedActionResult<ItemStack?>? {
         playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0f, 1.0f)
         return TypedActionResult.success(playerEntity.getStackInHand(hand))

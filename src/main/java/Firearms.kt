@@ -1,6 +1,6 @@
 package com.github.holeaupoint.firearms;
 
-import com.github.holeaupoint.firearms.com.github.holeaupoint.firearms.items.BlackPowder
+import com.github.holeaupoint.firearms.com.github.holeaupoint.firearms.items.ingredients.BlackPowder
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
@@ -11,10 +11,12 @@ import net.minecraft.util.registry.Registry
 
 class Firearms : ModInitializer {
     val namespace = "firearms"
+    // Item group
     val firearmsGroup = FabricItemGroupBuilder.create(Identifier(namespace, "general"))
         .icon { ItemStack(Items.GUNPOWDER) }
         .build()
 
+    // Initialize items to register
     val blackPowder = BlackPowder(FabricItemSettings().group(firearmsGroup))
 
     override fun onInitialize() {
