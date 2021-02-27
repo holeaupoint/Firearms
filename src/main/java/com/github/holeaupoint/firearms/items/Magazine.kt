@@ -9,5 +9,6 @@ class Magazine (
     private val type: MagazineType,
     ) : Item(settings) {
 
-    private var cartridges = LinkedList<Cartridge>()
+
+    var cartridges = LinkedList<Int>()
 }

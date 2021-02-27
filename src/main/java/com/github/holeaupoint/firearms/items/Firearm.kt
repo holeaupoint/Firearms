@@ -10,11 +10,19 @@ class Firearm(
     private val baseFireRate: Double, // Fire rate, modifiable
     ) : Item(settings) {
 
-    private val isChambered: Boolean = false
+    private var chamber: Int = 0
+    private var magazine: Magazine? = null
 
 /* How should reloading checks be handled? Check both the MagazineType and Calibers?
 Keep in mind for AR builds, it can be the same MagazineType but different Caliber. For example, you can load
 both .300BLK and .223REM in a STANAG type magazine, but obviously if the upper receiver has a .223REM barrel
 the player shouldn't be able to shoot from a STANAG magazine with .300BLK rounds in it.
  */
+    fun isChambered(): Boolean { return this.chamber != 0 }
+
+    fun cycleRound() {
+        chamber = magazine.cartridges.last
+    }
+
+
 }
